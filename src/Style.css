@@ -1,0 +1,180 @@
+@font-face {
+    font-family: "Lato";
+    src: url("./Fonts/Lato-Regular.ttf")
+      format("lato-regular");
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "lato-regular", sans-serif;
+    font-size: 16px;
+  }
+
+  body {
+    position: relative;
+  }
+
+.bluehead {
+    position: absolute;
+    right: 0;
+    height: 95px;
+    width: 40%;
+    background-color: #00BDD4;
+    
+}
+
+.headertext {
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    line-height: 42px;
+    margin-top: 24px;
+    left: 65px;
+}
+
+.yellowhead {
+    position: relative;
+    height: 95px;
+    width: 100%;
+    background-color: #DAED49;
+    ;
+}
+
+.bluetriangle {
+    position: absolute;
+    right: 40%;
+    width: 0;
+    height: 0;
+    border-top: 95px solid #00BDD4;
+    border-left: 95px solid transparent
+}
+
+.leftsidewrapper {
+    box-sizing: border-box;
+    position: relative;
+    width: 50%;
+    margin-top: 120px;
+    text-align: center;
+        
+}
+
+
+#sectionlogo {
+    box-sizing: border-box;
+    position: relative;
+    left: 0px;    
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+
+#sectionlogo h1 {
+    padding: 100px auto;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 84px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    
+}
+
+#sectionlogo h1 b {
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 84px;
+}
+
+.blue {
+    color:#00BDD4;
+}
+
+.logo {
+    position: static;
+    width: 647px;
+    height: 664px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 100px;
+       
+}
+
+#mainsection {
+    box-sizing: border-box;
+    position: absolute;
+    /* background-color: #464646; */
+    padding: 20px, auto;
+    width: 50%;
+    height: 500px;
+    right: 0;
+    margin-top: 120px;
+}
+
+.verticalline {
+    position: absolute;
+    color: #000;
+    border-left: 1px solid #d1d1d1;
+    height: 100%;
+    left: 150px;
+}
+
+.episodeidbracket {
+    position: relative;
+    height: 50px; 
+    padding-top: 25px; 
+    padding-bottom: 25px;  
+
+}
+
+.episodeid {
+    display: inline-block;
+    color: #000;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 50px;
+    line-height: 54px;   
+
+}
+.episodedescription {
+    display: inline-block;
+    margin-left: 50px;
+    
+}
+
+.enameblue {
+    display: inline-block;
+    color: #00BDD4;
+    font-size: 25px;
+    font-weight: 700; 
+
+}
+
+.enameyellow {
+    display: inline-block;
+    color: #BDD800;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+
+}
+
+.emisiondate {
+    color: #959595;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.footer {
+    position: static;
+    background-color: #464646;
+    text-align: center;
+    line-height: 10vh;
+    color: #CCCCCC;
+    height: 10vh;
+    width: 100%;
+    bottom: 0px;
+}

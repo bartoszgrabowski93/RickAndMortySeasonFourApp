@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import Details from "./EpisodeDetails";
 import "./Style.css";
 import { useQuery } from "@apollo/client";
 import { GET_EPISODES } from "./gql/Query";
+import { BrowserRouter, Link } from "react-router-dom";
 
 function Episodes() {
   // const [episodes, setEpisodes] = useState(0);
@@ -16,20 +18,19 @@ function Episodes() {
     }
   }
 
-  function changeTitleColor(className,epNumber){
-    let result = epNumber%2;
+  function changeTitleColor(className, idNumber) {
+    let result = idNumber % 2;
     const elementToChange = document.getElementsByClassName(className);
-    if (result != 0){
-      console.log(result)
-      const titleColorBlue = 'titlecolorblue';
+    if (result != 0) {
+      const titleColorBlue = "titlecolorblue";
       return titleColorBlue;
     } else {
       return className;
     }
-  } 
-  
-  function episodeDetailsWindow(episodeId) {
-    window.open
+  }
+
+  function episodeDetails(episodeId) {
+    console.log({ episodeId });
   }
 
   if (loading) return "Loading...";
@@ -38,15 +39,18 @@ function Episodes() {
   return (
     <>
       <section id="mainsection">
-        <div className="episodeidbracket">        
+        <div className="episodeidbracket">
           {data.episodes.results.map((episode) => (
             <div key={episode.id}>
               <div className="verticalline"></div>
               <p className="episodeid">S04E{episodeNumber(episode.id)}</p>
               <div className="episodedescription">
-                <a href="#" className={changeTitleColor('titlecolor',episode.id)}>
+                <Link
+                  to={"/episode/" + episode.id}
+                  className={changeTitleColor("titlecolor", episode.id)}
+                >
                   {episode.name}
-                </a>
+                </Link>
                 <p className="emisiondate">{episode.air_date}</p>
               </div>
             </div>
@@ -58,20 +62,3 @@ function Episodes() {
 }
 
 export default Episodes;
-
-{
-  /* <div className='verticalline'></div>
-        <div className='episodeidbracket'>
-          <p className="episodeid">{episode.Id}</p>
-          <div class='episodedescription'>
-            <p className="enameblue">{episode.Name}</p>
-            <p className="emisiondate">{episode.Air_Date}</p>
-          </div>          
-        </div> */
-}
-
-//   <section Id='mainsection'>
-// {data.episodes.results.map((episode) => (
-//   <p key={episode.id}>{episode.name}</p>
-//   ))}
-// </section>

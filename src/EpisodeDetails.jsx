@@ -31,7 +31,7 @@ function Details(props) {
             {data.characters.results.map((char) => (
               <div key={char.id}>
                 <Link
-                  to={"/characterDetails" + char.id}
+                  to={"/character/" + char.id}
                   className={changeTitleColor("titlecolor", char.id)}
                 >
                   {char.name}

@@ -6,6 +6,7 @@ import EpisodeDetails from "./EpisodeDetails.jsx";
 import CharacterDetails from "./CharacterDetails.jsx";
 import Footer from "./components/footer";
 import Logo from "./components/logo.jsx";
+import characterImage from "./components/characterImage.jsx";
 import "./Style.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
@@ -25,11 +26,33 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Head />
         </header>
         <section>
-          <Logo />
           <Routes>
-            <Route path="/" element={<Episodes />} />
-            <Route path="/episode/:id" element={<EpisodeDetails />} />
-            <Route path="/character/:id" element={<CharacterDetails />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Episodes />
+                  <Logo />
+                </>
+              }
+            />
+            <Route
+              path="/episode/:id"
+              element={
+                <>
+                  <EpisodeDetails />
+                  <Logo />
+                </>
+              }
+            />
+            <Route
+              path="/character/:id"
+              element={
+                <>
+                  <CharacterDetails />
+                </>
+              }
+            />
           </Routes>
         </section>
 
@@ -38,5 +61,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-// { warunek ? <Episodes /> : <Details />}

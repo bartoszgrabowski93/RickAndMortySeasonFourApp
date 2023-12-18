@@ -28,8 +28,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Logo />
           <Routes>
             <Route path="/" element={<Episodes />} />
-            <Route path="/episode/" element={<EpisodeDetails />} />
-            <Route path="/character/" element={<CharacterDetails />} />
+            <Route path="/episode/:id" element={<EpisodeDetails />} />
+            <Route path="/character/:id" element={<CharacterDetails />} />
           </Routes>
         </section>
 

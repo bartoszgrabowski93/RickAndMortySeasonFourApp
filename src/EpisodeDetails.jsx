@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Style.css";
 import { useQuery } from "@apollo/client";
-import { GET_CHARACTERS } from "./gql/QueryCharacters";
+import { GET_CHARACTERS } from "./gql/Query";
 import { BrowserRouter, Link } from "react-router-dom";
 
 function Details(props) {
@@ -31,12 +31,12 @@ function Details(props) {
             {data.characters.results.map((char) => (
               <div key={char.id}>
                 <Link
-                  to={"/character/" + char.id}
+                  to={`/character/${char.id}`}
                   className={changeTitleColor("titlecolor", char.id)}
                 >
                   {char.name}
                 </Link>
-                <p className="emisiondate">{char.spiecies}</p>
+                <p className="emisiondate">{char.species}</p>
               </div>
             ))}
           </div>

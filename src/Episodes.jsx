@@ -46,7 +46,7 @@ function Episodes() {
               <p className="episodeid">S04E{episodeNumber(episode.id)}</p>
               <div className="episodedescription">
                 <Link
-                  to={"/episode/" + episode.id}
+                  to={`/episode/${episode.id}`}
                   className={changeTitleColor("titlecolor", episode.id)}
                 >
                   {episode.name}

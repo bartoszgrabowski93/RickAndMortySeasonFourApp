@@ -18,7 +18,27 @@ export const GET_CHARACTERS = gql`
       results {
         id
         name
-        spicies
+        species
+      }
+    }
+  }
+`;
+
+export const GET_CHARACTER_DETAILS = gql`
+  query GetcharactersByIds($id: ID!) {
+    character(id: $id) {
+      id
+      name
+      image
+      status
+      species
+      type
+      gender
+      origin {
+        name
+      }
+      location {
+        name
       }
     }
   }

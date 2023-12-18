@@ -1,13 +1,20 @@
-import { useState } from "react";
 import "./Style.css";
 import { useQuery } from "@apollo/client";
-import { GET_CHARACTERS } from "./gql/QueryCharacters";
-import { BrowserRouter, Link } from "react-router-dom";
+import { GET_CHARACTER_DETAILS } from "./gql/Query";
+import { useParams } from "react-router-dom";
 
-function Details(props) {
-  const episodeId = props;
+const Details = (props) => {
+  function GetId() {
+    const { id } = useParams();
+    console.log(id);
+  }
 
-  const { data, loading, error } = useQuery(GET_CHARACTERS);
+  let { id } = useParams();
+  const idNumber = console.log(typeof id);
+
+  const { data, loading, error } = useQuery(GET_CHARACTER_DETAILS, {
+    variables: { id },
+  });
 
   if (loading) return "Loading...";
   if (error) return <pre>{error.message}</pre>;
@@ -23,37 +30,28 @@ function Details(props) {
     }
   }
 
+  const char = data.character;
+
   return (
     <>
       <>
         <section id="mainsection">
           <div className="episodeidbracket">
-            {data.characters.results.map((char) => (
-              <div key={char.id}>
-                <Link
-                  to={"/characterDetails" + char.id}
-                  className={changeTitleColor("titlecolor", char.id)}
-                >
-                  {char.name}
-                </Link>
-                <p className="emisiondate">{char.spiecies}</p>
-              </div>
-            ))}
+            <div key={data.character.id}>
+              <p>{char.name}</p>
+              <p>{char.status}</p>
+              <p>{char.spicies}</p>
+              <img src={char.image} alt="Character Picture" className="logo" />
+              <p>{char.type}</p>
+              <p>{char.gender}</p>
+              <p>{char.origin.name}</p>
+              <p>{char.location.name}</p>
+            </div>
           </div>
         </section>
       </>
     </>
   );
-}
+};
 
 export default Details;
-
-{
-  /* <p className="episodeid">S04E{episodeNumber(episode.id)}</p>
-              <div className="episodedescription">
-                <a href={open.Details + episode.id} className={changeTitleColor('titlecolor',episode.id)}>
-                  {episode.name}
-                </a>
-                <p className="emisiondate">{episode.air_date}</p>
-              </div> */
-}

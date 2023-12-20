@@ -26,7 +26,7 @@ function Details(props) {
   return (
     <>
       <>
-        <section id="mainsection">
+        <section className="mainsection">
           <div className="episodeidbracket">
             {data.characters.results.map((char) => (
               <div key={char.id}>

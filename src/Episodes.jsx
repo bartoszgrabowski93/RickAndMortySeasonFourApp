@@ -39,19 +39,23 @@ function Episodes() {
   return (
     <>
       <section id="mainsection">
-        <div className="episodeidbracket">
+        <div className="episodescontainer">
           {data.episodes.results.map((episode) => (
-            <div key={episode.id}>
-              <div className="verticalline"></div>
-              <p className="episodeid">S04E{episodeNumber(episode.id)}</p>
-              <div className="episodedescription">
-                <Link
-                  to={`/episode/${episode.id}`}
-                  className={changeTitleColor("titlecolor", episode.id)}
-                >
-                  {episode.name}
-                </Link>
-                <p className="emisiondate">{episode.air_date}</p>
+            <div>
+              <div key={episode.id} className="episodeidcontainer">
+                <div>
+                  <p className="episodeid">{episode.episode}</p>
+                </div>
+                <hr className="verticalline" />
+                <div className="episodedescription">
+                  <Link
+                    to={`/episode/${episode.id}`}
+                    className={changeTitleColor("titlecolor", episode.id)}
+                  >
+                    {episode.name}
+                  </Link>
+                  <p className="emisiondate">{episode.air_date}</p>
+                </div>
               </div>
             </div>
           ))}

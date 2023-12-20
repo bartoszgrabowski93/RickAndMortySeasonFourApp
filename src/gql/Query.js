@@ -2,11 +2,12 @@ import { gql } from "@apollo/client";
 
 export const GET_EPISODES = gql`
   query GetEpisodes {
-    episodes {
+    episodes(filter: { episode: "S04" }) {
       results {
         id
         name
         air_date
+        episode
       }
     }
   }

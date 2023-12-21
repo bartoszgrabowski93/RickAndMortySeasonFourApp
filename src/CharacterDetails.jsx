@@ -26,7 +26,6 @@ const Details = (props) => {
 
   const char = data.character;
   let i = 0;
-  const navigate = useNavigate();
 
   const listOfDots = [
     { id: 1, data: char.status, dataName: "status" },
@@ -46,36 +45,40 @@ const Details = (props) => {
     }
   }
 
+  const navigate = useNavigate();
+
   return (
     <>
-      <button onClick={() => navigate(-1)} className="backbutton">
-        Episodes
-      </button>
-      <div className="containercharacterinfo">
-        <div className="leftsidewrapper">
-          <section id="sectionlogo">
-            <h1 className="charactername">{char.name}</h1>
-          </section>
-          <img
-            src={char.image}
-            alt="Character Image"
-            className="characterimage"
-          />
-        </div>
-        <div id="mainsection" className="characterdetailsinfowrapper">
-          <section className="episodeidbracket">
-            <div key={char.id}></div>
-            {listOfDots.map((l) => (
-              <div key={l.id}>
-                <div className="characterdescription">
-                  <p className={changeTitleColor("titlecolor", l.id)}>
-                    {ifNull(l.data)}
-                  </p>
-                  <p className="emisiondate">{l.dataName}</p>
+      <div>
+        <button onClick={() => navigate(-1)} className="backbutton">
+          Characters
+        </button>
+        <div className="containercharacterinfo">
+          <div className="leftsidewrapper">
+            <section id="sectionlogo">
+              <h1 className="charactername">{char.name}</h1>
+            </section>
+            <img
+              src={char.image}
+              alt="Character Image"
+              className="characterimage"
+            />
+          </div>
+          <div id="mainsection">
+            <section className="episodeidbracket">
+              <div key={char.id}></div>
+              {listOfDots.map((l) => (
+                <div key={l.id}>
+                  <div className="characterdescription">
+                    <p className={changeTitleColor("titlecolor", l.id)}>
+                      {ifNull(l.data)}
+                    </p>
+                    <p className="emisiondate">{l.dataName}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </section>
+              ))}
+            </section>
+          </div>
         </div>
       </div>
     </>

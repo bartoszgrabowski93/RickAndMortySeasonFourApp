@@ -7,7 +7,7 @@
   padding: 0;
   font-family: "Lato", sans-serif;
   font-size: 16px;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 .bluehead {
@@ -44,9 +44,31 @@
   border-left: 95px solid transparent;
 }
 
+.backbutton {
+  margin: 20px;
+  padding: 20px;
+  width: 206px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: #00bdd4;
+  flex: 1;
+}
+
 .container {
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-around;
+  /* width: 100vh; */
+  /* border: 10px solid red; */
+}
+
+.containercharacterinfo {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 50px;
+  /* align-self: center; */
   /* border: 10px solid red; */
 }
 
@@ -54,7 +76,21 @@
   flex: 1;
   margin-top: 5%;
   text-align: center;
+  width: 50%;
+  margin: 20 20px;
   /* border: 10px solid black; */
+}
+
+.mainsection {
+  flex: 1;
+  padding: 20px, auto;
+  /* right: 0; */
+  margin-top: 5%;
+  width: 50%;
+}
+
+.characterinfowrapper {
+  padding: 10px 0px;
 }
 
 #sectionlogo h1 {
@@ -69,6 +105,7 @@
 
 .blue {
   color: #00bdd4;
+  text-transform: capitalize;
 }
 
 .logo {
@@ -76,22 +113,33 @@
   flex: 1;
   width: 647px;
   height: 664px;
+  /* margin-left: 10rem;
+  margin-right: 10rem;
+  margin-top: 100px;
+  margin-bottom: 100px; */
+}
+
+.charactername {
+  color: #00bdd4;
+  text-transform: capitalize;
+  height: 84px;
+  font-size: 70px;
+}
+
+.characterimage {
+  flex: 1;
+  width: 650px;
+  height: 650px;
   margin-left: 10rem;
   margin-right: 10rem;
   margin-bottom: 100px;
+  flex-shrink: 0;
 }
 
 #sectionlogo h1 b {
   font-weight: 600;
   font-size: 70px;
   line-height: 84px;
-}
-
-#mainsection {
-  flex: 1;
-  padding: 20px, auto;
-  /* right: 0; */
-  margin-top: 5%;
 }
 
 .episodescontainer {
@@ -132,6 +180,13 @@
   margin-left: 50px;
 }
 
+.characterdescription {
+  /* display: inline-block; */
+  flex: 10;
+  margin-left: 50px;
+  padding: 20px;
+}
+
 .titlecolorblue {
   display: inline-block;
   color: #00bdd4;
@@ -139,6 +194,7 @@
   font-weight: 700;
   line-height: 30px;
   text-decoration: none;
+  text-transform: capitalize;
 }
 
 .titlecolor {
@@ -148,6 +204,7 @@
   font-weight: 700;
   line-height: 30px;
   text-decoration: none;
+  text-transform: capitalize;
 }
 
 .emisiondate {
@@ -155,6 +212,13 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  height: 24px;
+  text-transform: capitalize;
+  margin: 5px 0px;
+}
+
+.characterdetailsinfowrapper {
+  display: flex;
 }
 
 .footer {

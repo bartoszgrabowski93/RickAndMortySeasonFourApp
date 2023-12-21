@@ -38,8 +38,8 @@ function Episodes() {
 
   return (
     <>
-      <section id="mainsection">
-        <div className="episodescontainer">
+      <div id="mainsection" className="episodescontainer">
+        <div>
           {data.episodes.results.map((episode) => (
             <div>
               <div key={episode.id} className="episodeidcontainer">
@@ -60,7 +60,7 @@ function Episodes() {
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </>
   );
 }

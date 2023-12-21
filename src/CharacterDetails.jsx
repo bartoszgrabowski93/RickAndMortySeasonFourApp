@@ -1,7 +1,7 @@
-import "./Style.css";
+import "./Styles/CharacterDetailsStyle.css";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTER_DETAILS } from "./gql/Query";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Details = (props) => {
   let { id } = useParams();
@@ -26,9 +26,10 @@ const Details = (props) => {
 
   const char = data.character;
   let i = 0;
+  const navigate = useNavigate();
 
   const listOfDots = [
-    { id: 1, data: char.name, dataName: "name" },
+    { id: 1, data: char.status, dataName: "status" },
     { id: 2, data: char.spicies, dataName: "species" },
     { id: 3, data: char.type, dataName: "type" },
     { id: 4, data: char.gender, dataName: "gender" },
@@ -47,27 +48,36 @@ const Details = (props) => {
 
   return (
     <>
-      <div className="leftsidewrapper">
-        <section id="sectionlogo">
-          <h1 className="blue">{char.name}</h1>
-        </section>
-        <img src={char.image} alt="Character Image" className="logo" />
-      </div>
-      <section id="mainsection">
-        <div className="episodeidbracket">
-          <div key={char.id}></div>
-          {listOfDots.map((l) => (
-            <div key={l.id}>
-              <div className="episodedescription">
-                <p className={changeTitleColor("titlecolor", l.id)}>
-                  {ifNull(l.data)}
-                </p>
-                <p className="emisiondate">{l.dataName}</p>
-              </div>
-            </div>
-          ))}
+      <button onClick={() => navigate(-1)} className="backbutton">
+        Episodes
+      </button>
+      <div className="containercharacterinfo">
+        <div className="leftsidewrapper">
+          <section id="sectionlogo">
+            <h1 className="charactername">{char.name}</h1>
+          </section>
+          <img
+            src={char.image}
+            alt="Character Image"
+            className="characterimage"
+          />
         </div>
-      </section>
+        <div id="mainsection" className="characterdetailsinfowrapper">
+          <section className="episodeidbracket">
+            <div key={char.id}></div>
+            {listOfDots.map((l) => (
+              <div key={l.id}>
+                <div className="characterdescription">
+                  <p className={changeTitleColor("titlecolor", l.id)}>
+                    {ifNull(l.data)}
+                  </p>
+                  <p className="emisiondate">{l.dataName}</p>
+                </div>
+              </div>
+            ))}
+          </section>
+        </div>
+      </div>
     </>
   );
 };

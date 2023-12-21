@@ -25,23 +25,21 @@ function Details(props) {
 
   return (
     <>
-      <>
-        <section className="mainsection">
-          <div className="episodeidbracket">
-            {data.characters.results.map((char) => (
-              <div key={char.id}>
-                <Link
-                  to={`/character/${char.id}`}
-                  className={changeTitleColor("titlecolor", char.id)}
-                >
-                  {char.name}
-                </Link>
-                <p className="emisiondate">{char.species}</p>
-              </div>
-            ))}
-          </div>
+      <div className="mainsection">
+        <section className="episodeidbracket">
+          {data.characters.results.map((char) => (
+            <div key={char.id} className="characterinfowrapper">
+              <Link
+                to={`/character/${char.id}`}
+                className={changeTitleColor("titlecolor", char.id)}
+              >
+                {char.name}
+              </Link>
+              <p className="emisiondate">{char.species}</p>
+            </div>
+          ))}
         </section>
-      </>
+      </div>
     </>
   );
 }

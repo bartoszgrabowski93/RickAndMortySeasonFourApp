@@ -6,8 +6,9 @@ import EpisodeDetails from "./EpisodeDetails.jsx";
 import CharacterDetails from "./CharacterDetails.jsx";
 import Footer from "./components/footer";
 import Logo from "./components/logo.jsx";
-
-import "./Style.css";
+import BackButton from "./components/backbutton.jsx";
+// import "./Styles/CharacterDetailsStyle.css";
+// import "./Style.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 
@@ -42,8 +43,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 path="/episode/:id"
                 element={
                   <>
-                    <Logo />
-                    <EpisodeDetails />
+                    <BackButton />
+                    <div className="containercharacterinfo">
+                      <Logo />
+                      <EpisodeDetails />
+                    </div>
                   </>
                 }
               />

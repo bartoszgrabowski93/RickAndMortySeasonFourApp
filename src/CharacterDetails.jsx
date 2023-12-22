@@ -3,15 +3,31 @@ import { useQuery } from "@apollo/client";
 import { GET_CHARACTER_DETAILS } from "./gql/Query";
 import { useParams, useNavigate } from "react-router-dom";
 
-const Details = (props) => {
+function CharacterDetails(props) {
   let { id } = useParams();
+  
+  let i = 0;
+  const navigate = useNavigate();
+
+
 
   const { data, loading, error } = useQuery(GET_CHARACTER_DETAILS, {
     variables: { id },
   });
 
+  
   if (loading) return "Loading...";
   if (error) return <pre>{error.message}</pre>;
+
+  const char = data.character;
+  const listOfDots = [
+    { id: 1, data: char.status, dataName: "status" },
+    { id: 2, data: char.spicies, dataName: "species" },
+    { id: 3, data: char.type, dataName: "type" },
+    { id: 4, data: char.gender, dataName: "gender" },
+    { id: 5, data: char.origin.name, dataName: "origin" },
+    { id: 6, data: char.location.name, dataName: "location" },
+  ];
 
   function changeTitleColor(className, idNumber) {
     let result = idNumber % 2;
@@ -24,18 +40,7 @@ const Details = (props) => {
     }
   }
 
-  const char = data.character;
-  let i = 0;
-  const navigate = useNavigate();
-
-  const listOfDots = [
-    { id: 1, data: char.status, dataName: "status" },
-    { id: 2, data: char.spicies, dataName: "species" },
-    { id: 3, data: char.type, dataName: "type" },
-    { id: 4, data: char.gender, dataName: "gender" },
-    { id: 5, data: char.origin.name, dataName: "origin" },
-    { id: 6, data: char.location.name, dataName: "location" },
-  ];
+ 
 
   function ifNull(value) {
     if (value == NaN || value == null || value == 0) {
@@ -82,4 +87,4 @@ const Details = (props) => {
   );
 };
 
-export default Details;
+export default CharacterDetails;

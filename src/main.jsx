@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <ApolloProvider client={client}>
-        <body>
+        <div>
           <header>
             <Head />
           </header>
@@ -61,7 +61,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               />
             </Routes>
           </div>
-        </body>
+        </div>
 
         <Footer />
       </ApolloProvider>

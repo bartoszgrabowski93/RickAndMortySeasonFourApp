@@ -2,11 +2,14 @@ import React from "react";
 import "..//Style.css";
 import { useParams, useNavigate } from "react-router-dom";
 
-class BackButton extends React.Component {
-  render() {
+function BackButton() {
+  const navigate = useNavigate();
+
+  if (window.location.pathname == "/") {
+    return <div></div>;
+  } else {
     return (
       <React.Fragment>
-        {/* {const navigate = useNavigate();} */}
         <button onClick={() => navigate(-1)} className="backbutton">
           Episodes
         </button>

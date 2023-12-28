@@ -5,17 +5,14 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function CharacterDetails(props) {
   let { id } = useParams();
-  
+
   let i = 0;
   const navigate = useNavigate();
-
-
 
   const { data, loading, error } = useQuery(GET_CHARACTER_DETAILS, {
     variables: { id },
   });
 
-  
   if (loading) return "Loading...";
   if (error) return <pre>{error.message}</pre>;
 
@@ -40,8 +37,6 @@ function CharacterDetails(props) {
     }
   }
 
- 
-
   function ifNull(value) {
     if (value == NaN || value == null || value == 0) {
       const nullValue = "-";
@@ -53,9 +48,6 @@ function CharacterDetails(props) {
 
   return (
     <>
-      <button onClick={() => navigate(-1)} className="backbutton">
-        Episodes
-      </button>
       <div className="containercharacterinfo">
         <div className="leftsidewrapper">
           <section id="sectionlogo">
@@ -85,6 +77,6 @@ function CharacterDetails(props) {
       </div>
     </>
   );
-};
+}
 
 export default CharacterDetails;

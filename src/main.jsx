@@ -10,14 +10,19 @@ import BackButton from "./components/backbutton.jsx";
 // import "./Styles/CharacterDetailsStyle.css";
 // import "./Style.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Link,
+  Routes,
+  Route,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
   cache: new InMemoryCache(),
 });
-
-function BackButtonState() {}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -27,6 +32,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <header>
             <Head />
           </header>
+          <div className="emptyspacebellowbar">
+            <BackButton />
+          </div>
 
           <div className="container">
             <Routes>
@@ -34,8 +42,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 path="/"
                 element={
                   <>
-                    <Logo />
-                    <Episodes />
+                    <div className="containerlogo">
+                      <Logo />
+                    </div>
+                    <div className="containerepisodes">
+                      <Episodes />
+                    </div>
                   </>
                 }
               />
@@ -43,9 +55,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 path="/episode/:id"
                 element={
                   <>
-                    <BackButton />
-                    <div className="containercharacterinfo">
+                    <div className="containerlogo">
                       <Logo />
+                    </div>
+                    <div className="containerepisodes">
                       <EpisodeDetails />
                     </div>
                   </>

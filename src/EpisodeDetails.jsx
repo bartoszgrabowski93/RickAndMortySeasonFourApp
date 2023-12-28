@@ -45,13 +45,3 @@ function Details(props) {
 }
 
 export default Details;
-
-{
-  /* <p className="episodeid">S04E{episodeNumber(episode.id)}</p>
-              <div className="episodedescription">
-                <a href={open.Details + episode.id} className={changeTitleColor('titlecolor',episode.id)}>
-                  {episode.name}
-                </a>
-                <p className="emisiondate">{episode.air_date}</p>
-              </div> */
-}

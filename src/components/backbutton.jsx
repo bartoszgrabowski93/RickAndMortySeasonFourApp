@@ -11,7 +11,7 @@ function BackButton() {
     return (
       <React.Fragment>
         <button onClick={() => navigate(-1)} className="backbutton">
-          Episodes
+          Back
         </button>
       </React.Fragment>
     );

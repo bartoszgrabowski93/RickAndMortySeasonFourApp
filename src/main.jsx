@@ -10,14 +10,7 @@ import BackButton from "./components/backbutton.jsx";
 // import "./Styles/CharacterDetailsStyle.css";
 // import "./Style.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import {
-  BrowserRouter,
-  Link,
-  Routes,
-  Route,
-  useParams,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",

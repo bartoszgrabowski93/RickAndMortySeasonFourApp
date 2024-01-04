@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <React.Fragment>
         <div className="footer">
-          <p>lorem ipsum copy 2021</p>
+          <p>lorem ipsum &copy;2021</p>
         </div>
       </React.Fragment>
     );

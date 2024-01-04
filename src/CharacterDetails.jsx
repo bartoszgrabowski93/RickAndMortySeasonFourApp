@@ -1,4 +1,4 @@
-import "./Styles/CharacterDetailsStyle.css";
+import "./Style.css";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTER_DETAILS } from "./gql/Query";
 import { useParams, useNavigate } from "react-router-dom";

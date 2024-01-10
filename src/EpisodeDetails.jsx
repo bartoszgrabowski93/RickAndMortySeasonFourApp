@@ -36,6 +36,7 @@ function Details(props) {
                 {char.name}
               </Link>
               <p className="emisiondate">{char.species}</p>
+              <div className="horizontalline"></div>
             </div>
           ))}
         </section>

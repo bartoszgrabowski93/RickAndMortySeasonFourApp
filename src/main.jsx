@@ -25,9 +25,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <header>
             <Head />
           </header>
-          <div className="emptyspacebellowbar">
+          <nav className="emptyspacebellowbar">
             <BackButton />
-          </div>
+          </nav>
 
           <div className="container">
             <Routes>

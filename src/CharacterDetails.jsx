@@ -63,13 +63,12 @@ function CharacterDetails(props) {
           <section className="episodeidbracket">
             <div key={char.id}></div>
             {listOfDots.map((l) => (
-              <div key={l.id}>
-                <div className="characterdescription">
-                  <p className={changeTitleColor("titlecolor", l.id)}>
-                    {ifNull(l.data)}
-                  </p>
-                  <p className="emisiondate">{l.dataName}</p>
-                </div>
+              <div key={l.id} className="characterdescription">
+                <p className={changeTitleColor("titlecolor", l.id)}>
+                  {ifNull(l.data)}
+                </p>
+                <p className="emisiondate">{l.dataName}</p>
+                <div className="horizontalline"></div>
               </div>
             ))}
           </section>

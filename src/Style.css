@@ -262,8 +262,13 @@
   .emptyspacebellowbar {
     height: 80px;
   }
+
   .container {
     flex-direction: column;
+  }
+
+  .leftsidewrapper {
+    margin-bottom: 112px;
   }
 
   .containerlogo {
@@ -273,6 +278,16 @@
   .episodemainontainer {
     flex-direction: column;
     margin: 0 0 20px 25px;
+  }
+
+  .containercharacterinfo {
+    flex-direction: column;
+    margin: 0px 28px 65px 28px;
+  }
+
+  .characterdescription {
+    margin: 0px;
+    padding: 0px;
   }
 
   .verticallinecontainer {
@@ -296,9 +311,6 @@
     margin: 30 0 0 25px;
   }
 
-  #sectionlogo {
-    text-align: left;
-  }
   .logo {
     flex: 1;
     width: 320px;
@@ -306,12 +318,12 @@
     margin-bottom: 30px auto;
   }
   #sectionlogo h1 {
-    margin: 0 0 0 26px;
-    padding: 0 0 3 0px;
+    /* margin: 0 0 0 26px; */
+    /* padding: 0 0 3 0px; */
     font-weight: 400;
     font-size: 38px;
     line-height: 45.6px;
-    text-align: left;
+    text-align: center;
   }
 
   #sectionlogo h1 b {
@@ -319,19 +331,25 @@
     font-size: 38px;
     line-height: 45.6px;
   }
+
   .charactername {
     color: #00bdd4;
+    align-self: center;
     text-transform: capitalize;
     height: 46px;
     font-size: 38px;
-    margin: 0 auto 44 auto;
+    margin: 0 0 44px 0;
+  }
+
+  .characterinfowrapper {
+    margin-left: 28px;
   }
 
   .characterimage {
     flex: 1;
     width: 320px;
     height: 306px;
-    margin: 0 auto 100px auto;
+    margin: 44px auto 0px auto;
     flex-shrink: 0;
   }
   .episodeid {
@@ -381,7 +399,7 @@
   .horizontalline {
     height: 1px;
     background-color: #d1d1d1;
-    width: 90%;
+    width: 100%;
     padding: 0 0px;
     margin: 0px;
     display: block;
@@ -397,9 +415,13 @@
   .episodemainontainer:last-of-type {
     margin-bottom: 70px;
   }
-  .episodemainontainer:last-of-type .verticalline {
+  .episodemainontainer:last-of-type .horizontalline {
     display: none;
   }
+  .episodemainontainer:last-of-type .verticallinecontainer {
+    display: none;
+  }
+
   .footer {
     background-color: #464646;
     height: 48.723px;

@@ -81,10 +81,15 @@
 .leftsidewrapper {
   padding: 0px;
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .containerepisodes {
   flex: 1;
+  margin-left: 20px;
+  margin-bottom: 150px;
 }
 
 .containercharacterinfo {
@@ -95,18 +100,33 @@
   flex: 1;
 }
 
+#sectionlogo {
+  width: 613px;
+  height: 238px;
+  align-self: center;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logotext {
+  flex: 1;
+}
+
 #sectionlogo h1 {
   flex: 1;
-  padding: 100px auto;
+  /* padding: 100px auto; */
   font-weight: 400;
   font-size: 70px;
   line-height: 84px;
-  padding-top: 7px;
   padding-bottom: 7px;
-  text-align: center;
+  text-align: left;
+  white-space: nowrap;
 }
 
 #sectionlogo h1 b {
+  flex: 1;
   font-weight: 600;
   font-size: 70px;
   line-height: 84px;
@@ -121,7 +141,7 @@
   flex: 1;
   width: 647px;
   height: 664px;
-  margin: 70px auto;
+  margin: 0px auto;
 }
 
 .charactername {
@@ -159,7 +179,7 @@
 
 .episodemainontainer {
   display: flex;
-  margin-top: 25px;
+  margin-top: 37px;
 }
 
 .episodenumber {
@@ -176,14 +196,14 @@
 }
 
 .episodedescription {
-  flex: 5;
+  flex: 8;
 }
 
 .verticalline {
   width: 1px;
   background-color: #959595;
   height: 100%;
-  margin: -15px;
+  margin: -20px;
   padding: 50px 0px;
 }
 

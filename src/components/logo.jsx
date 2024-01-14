@@ -9,11 +9,17 @@ class Logo extends React.Component {
       <>
         <div className="logoandtitlecontainer">
           <div id="sectionlogo">
-            <h1>
-              Episode of the <b>4th</b>
-            </h1>
-            <h1>season of the series</h1>
-            <h1 className="blue">Rick and Morty</h1>
+            <div className="logotext">
+              <h1>
+                Episode of the <b>4th</b>
+              </h1>
+            </div>
+            <div className="logotext">
+              <h1>season of the series</h1>
+            </div>
+            <div className="logotext">
+              <h1 className="blue">Rick and Morty</h1>
+            </div>
           </div>
           <img src={logo} alt="RickAndMortyLogo" className="logo" />
         </div>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "..//Style.css";
+import React from "react";
+import "../Style.css";
 import BackImage from "../image/Refund_back.png";
 import { useParams, useNavigate } from "react-router-dom";
 

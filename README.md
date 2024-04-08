@@ -1,8 +1,25 @@
-# React + Vite
+# GENERAL INFO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rick and Morty season 4 app was created as recruitment task application. It integrates many technologies to creat a dynamic website which demonstrates data of episodes, characters and many other things in regard of Rick and Morty Univesum
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Used technologies:
+
+- HTML5
+- CSS
+- JavaScript
+- VITE
+- React.js
+- GraphQL
+
+## How to run
+
+1. Use git close https://github.com/bartoszgrabowski93/RickAndMortySeasonFourApp.git in your IDE
+2. In terminal type : npm run install to install all necesisties ( You need to have preinstaled NodeJS)
+3. After successful installation type in terminal : npm run dev
+4. In terminal there should be link to localhost. Post it to your internet browser and enjoy App.
+
+## Status
+
+Project is suspended. In future probably it will be developed with more features and tests.

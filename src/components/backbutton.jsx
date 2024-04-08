@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 function BackButton() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const episodesNumber = "%%";
   function previousPageName() {
     if (window.location.pathname == `/episode/${episodesNumber}`) {
@@ -25,10 +25,12 @@ function BackButton() {
   } else {
     return (
       <React.Fragment>
-        <button onClick={() => navigate(-1)} className="backbutton">
-          <img src={BackImage} alt="" sizes="" srcset="" />
-          {(previousPageName = previousPageName())}
-        </button>
+        <Router>
+          <button onClick={() => useNavigate(-1)} className="backbutton">
+            <img src={BackImage} alt="" sizes="" srcset="" />
+            Back
+          </button>
+        </Router>
       </React.Fragment>
     );
   }

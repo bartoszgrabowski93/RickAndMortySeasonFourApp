@@ -15,7 +15,7 @@ Used technologies:
 
 ## How to run
 
-1. Use git close https://github.com/bartoszgrabowski93/RickAndMortySeasonFourApp.git in your IDE
+1. Use git clone https://github.com/bartoszgrabowski93/RickAndMortySeasonFourApp.git in your IDE
 2. In terminal type : npm run install to install all necesisties ( You need to have preinstaled NodeJS)
 3. After successful installation type in terminal : npm run dev
 4. In terminal there should be link to localhost. Post it to your internet browser and enjoy App.
